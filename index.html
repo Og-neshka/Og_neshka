@@ -15,9 +15,10 @@
       color: #222;
       position: relative;
       overflow: hidden;
+      background-color: #fff9e6; /* светло-молочный фон */
     }
 
-    /* Градиент: прозрачный → молочно-жёлтый → прозрачный */
+    /* Градиент: прозрачный → молочно-жёлтый (с прозрачностью 0.3) → прозрачный */
     body::before {
       content: "";
       position: fixed;
@@ -27,7 +28,7 @@
       background: linear-gradient(
         135deg,
         rgba(255, 255, 224, 0) 0%,
-        rgba(255, 253, 208, 1) 50%,
+        rgba(255, 253, 208, 0.3) 50%,
         rgba(255, 255, 224, 0) 100%
       );
       z-index: -2;
