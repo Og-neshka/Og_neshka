@@ -33,17 +33,17 @@
       z-index: -3;
     }
 
-    /* Желтый эллипс сверху слева */
+    /* Желтый эллипс сверху слева - увеличенный в 3 раза */
     .yellow-ellipse {
       position: fixed;
       top: 10%;
       left: 20%;
-      width: 350px;
-      height: 220px;
+      width: 1050px;   /* ~350 * 3 */
+      height: 660px;   /* ~220 * 3 */
       background: radial-gradient(
         ellipse at center,
         rgba(255, 253, 208, 0.4) 0%,
-        rgba(255, 253, 208, 0.2) 60%,
+        rgba(255, 253, 208, 0.15) 50%,
         rgba(255, 253, 208, 0) 100%
       );
       z-index: -2;
@@ -52,17 +52,17 @@
       transform: translate(-50%, -50%);
     }
 
-    /* Синий эллипс снизу справа */
+    /* Синий эллипс снизу справа - увеличенный в 3 раза */
     .blue-ellipse {
       position: fixed;
       bottom: 10%;
       right: 20%;
-      width: 320px;
-      height: 200px;
+      width: 960px;    /* ~320 * 3 */
+      height: 600px;   /* ~200 * 3 */
       background: radial-gradient(
         ellipse at center,
         rgba(208, 229, 255, 0.35) 0%,
-        rgba(208, 229, 255, 0.15) 70%,
+        rgba(208, 229, 255, 0.15) 50%,
         rgba(208, 229, 255, 0) 100%
       );
       z-index: -2;
