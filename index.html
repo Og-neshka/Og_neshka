@@ -1,127 +1,98 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OG_neshka Telegram Bot</title>
+  <meta charset="UTF-8">
+  <title>OG_neshka</title>
   <style>
-    html, body {
-      margin: 0; padding: 0;
+    body, html {
+      margin: 0;
+      padding: 0;
       height: 100%;
-      background: linear-gradient(135deg, #d0e88c, #8fd88f);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      color: #222;
-      position: relative;
-      overflow: hidden;
     }
+
     .pattern {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-image: url('data:image/svg+xml;utf8,\
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" fill="none" stroke="rgba(0,0,0,0.2)">\
-  <g stroke-width="2">\
-    <circle cx="50" cy="50" r="10"/>\
-    <rect x="100" y="100" width="30" height="30"/>\
-    <path d="M150 150 q20 -20 40 0" />\
-    <ellipse cx="200" cy="200" rx="15" ry="10"/>\
-    <polygon points="250,150 270,180 230,180" />\
-    <line x1="300" y1="300" x2="350" y2="350"/>\
-  </g>\
-</svg>');
-      background-repeat: repeat;
-      opacity: 0.3;
-      pointer-events: none;
-      z-index: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('file_000000008c1861f48399321ea5c8124b.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: -1;
     }
+
     .tgme_page_wrap {
-      background: #fff;
-      width: 360px;
-      margin: 80px auto;
+      position: relative;
+      max-width: 400px;
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      font-family: Arial, sans-serif;
+      text-align: center;
     }
+
     .tgme_header {
-      background: #0088cc;
-      color: white;
-      padding: 12px 16px;
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
-      position: relative;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 15px;
     }
-    .tgme_page_photo {
-      width: 128px;
-      height: 128px;
-      margin: 24px auto 12px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 0 0 3px #0088cc;
-      display: block;
-      cursor: pointer;
-    }
+
     .tgme_page_photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
     }
+
     .tgme_page_title {
-      text-align: center;
-      font-weight: 700;
-      font-size: 24px;
-      margin-bottom: 4px;
+      font-size: 22px;
+      margin: 10px 0;
     }
+
     .tgme_page_extra {
-      text-align: center;
-      font-size: 14px;
-      color: #0088cc;
-      margin-bottom: 16px;
+      color: gray;
+      margin-bottom: 15px;
     }
+
     .tgme_page_description {
-      text-align: center;
-      padding: 0 20px 24px;
-      font-size: 14px;
-      color: #444;
-    }
-    .tgme_action_button {
-      display: block;
-      width: calc((100% - 40px) / 2); /* в два раза уже */
-      margin: 0 auto 24px;
-      background: #0088cc;
-      color: white;
-      text-align: center;
-      font-weight: 600;
       font-size: 16px;
-      padding: 12px 0;
-      border-radius: 24px;
-      text-decoration: none;
-      box-shadow: none;
-      transition: background-color 0.2s ease;
+      margin-bottom: 20px;
     }
+
+    .tgme_action_button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0088cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
     .tgme_action_button:hover {
-      background: #0077bb;
+      background-color: #006699;
     }
   </style>
 </head>
 <body>
+
   <div class="pattern"></div>
+
   <div class="tgme_page_wrap" role="main" aria-label="Telegram bot page">
     <header class="tgme_header">OG_neshka</header>
     <a href="https://t.me/og_neshka_bot" target="_blank" rel="noopener" class="tgme_page_photo" aria-label="Go to OG_neshka bot">
-      <img src="https://cdn4.telegram.space/file/Gt1gQAlKlFIgoJoJrjBy-f_8basdPaw9BSnfE3FBWctx5cFB9r-Dxkyduf5PNYLspTWiy6rm-o8uqZu15RLpzAtSY5ibPk2--M4XSgdCkIXHujpI08FdBr4a3dxHZ4wJwclkRdkb1FLxuBDsTII7D_pyQeBX4PloMZ5dAJqmP-zr0UTeqWIEPG0CaltCnPhgrWIbnQWPVsuKtF1LHZTT6OrypCZrCU2MwlGcjymR5ybLtrI2tA2I0YOM1tOz5IVpQW4vFuHSLuQxON7yscnsx6NPOUCWbZHn_29FDHYaDNb9zIpkiRyxtZmdEEq592QVweSvCkIVyyBAGLfA09Z4XA.jpg" alt="Avatar" />
+      <img src="https://cdn4.telegram.space/file/Gt1gQAlKlFIgoJoJrjBy-f_8basdPaw9BSnfE3FBWctx5cFB9r-Dxkyduf5PNYLspTWiy6rm-o8uqZu15RLpzAtSY5ibPk2--M4XSgdCkIXHujpI08FdBr4a3dxHZ4wJwclkRdkb1FLxuBDsTII7D_pyQeBX4PloMZ5dAJqmP-zr0UTeqWIEPG0CaltCnPhgrWIbnQWPVsuKtF1LHZTT6OrypCZrCU2MwlGcjymR5ybLtrI2tA2I0YOM1tOz5IVpQW4vFuHSLuQxON7yscnsx6NPOUCWbZHn_29FDHYaDNb9zIpkiRyxtZmdEEq592QVweSvCkIVyyBAGLfA09Z4XA.jpg" alt="Avatar">
     </a>
     <h1 class="tgme_page_title">OG_neshka</h1>
     <div class="tgme_page_extra">@og_neshka</div>
     <div class="tgme_page_description">Connect with our Telegram bot</div>
-    <a href="https://t.me/og_neshka_bot" target="_blank" rel="noopener" class="tgme_action_button" aria-label="Send message to OG_neshka bot">
+    <a href="https://t.me/og_neshka_bot" target="_blank" rel="noopener" class="tgme_action_button">
       Send Message
     </a>
   </div>
+
 </body>
 </html>
