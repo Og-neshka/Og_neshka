@@ -1,136 +1,90 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OG_neshka</title>
-  <style>
-    :root {
-      --tg-bg-color: #ffffff;
-      --tg-header-bg: #2aabee;
-      --tg-header-text: #ffffff;
-      --tg-text-color: #1c1c1c;
-      --tg-secondary-text: #8e8e93;
-      --tg-button-bg: #2aabee;
-      --tg-button-hover-bg: #2380b8;
-      --tg-button-text: #ffffff;
-    }
-    body {
-      margin: 0;
-      background: linear-gradient(135deg, #e6ecf0 0%, #f5f7fa 100%);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--tg-text-color);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    .tgme_wrap {
-      max-width: 420px;
-      margin: 40px auto;
-      border-radius: 12px;
-      background: var(--tg-bg-color);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      border: 1px solid #d1d1d6;
-    }
-    .tgme_header {
-      background: var(--tg-header-bg);
-      padding: 15px;
-      color: var(--tg-header-text);
-      font-weight: 700;
-      font-size: 18px;
-      text-align: center;
-      user-select: none;
-    }
-    .tgme_body_wrap {
-      padding: 20px;
-      text-align: center;
-    }
-    .tgme_page_photo {
-      margin: 0 auto 20px;
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      overflow: hidden;
-      cursor: pointer;
-      border: 2px solid var(--tg-header-bg);
-    }
-    .tgme_page_photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .tgme_page_title {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: var(--tg-text-color);
-    }
-    .tgme_page_extra {
-      font-size: 14px;
-      color: var(--tg-secondary-text);
-      margin-bottom: 15px;
-    }
-    .tgme_page_description {
-      font-size: 16px;
-      color: var(--tg-text-color);
-      margin-bottom: 25px;
-      padding: 0 10px;
-    }
-    .tgme_page_action {
-      margin-bottom: 15px;
-    }
-    .tgme_action_button_new {
-      background-color: var(--tg-button-bg);
-      color: var(--tg-button-text);
-      font-weight: 600;
-      font-size: 16px;
-      padding: 12px 30px;
-      border-radius: 25px;
-      text-decoration: none;
-      display: inline-block;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      box-shadow: none; /* Убираем свечение */
-    }
-    .tgme_action_button_new:hover {
-      background-color: var(--tg-button-hover-bg);
-    }
-    .tgme_page_additional {
-      font-size: 13px;
-      color: var(--tg-secondary-text);
-      margin-top: 10px;
-      line-height: 1.3;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Telegram Bot — og_neshka</title>
+<style>
+  body {
+    margin: 0;
+    background-color: #f9fafd;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #222;
+  }
+  .container {
+    background: white;
+    width: 360px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 30px 20px 40px;
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 2px solid #00aaff;
+  }
+  h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .username {
+    color: #00aaff;
+    margin: 6px 0 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #0088cc;
+  }
+  .btn svg {
+    margin-left: 12px;
+    width: 20px;
+    height: 20px;
+    fill: white;
+  }
+</style>
 </head>
 <body>
-  <div class="tgme_wrap" role="main">
-    <div class="tgme_header" aria-label="Header">
-      OG_neshka
-    </div>
-    <div class="tgme_body_wrap">
-      <div class="tgme_page">
-        <a href="tg://resolve?domain=og_neshka_bot" class="tgme_page_photo" aria-label="Bot avatar link">
-          <img src="https://cdn4.telegram.space/file/Gt1gQAlKlFIgoJoJrjBy-f_8basdPaw9BSnfE3FBWctx5cFB9r-Dxkyduf5PNYLspTWiy6rm-o8uqZu15RLpzAtSY5ibPk2--M4XSgdCkIXHujpI08FdBr4a3dxHZ4wJwclkRdkb1FLxuBDsTII7D_pyQeBX4PloMZ5dAJqmP-zr0UTeqWIEPG0CaltCnPhgrWIbnQWPVsuKtF1LHZTT6OrypCZrCU2MwlGcjymR5ybLtrI2tA2I0YOM1tOz5IVpQW4vFuHSLuQxON7yscnsx6NPOUCWbZHn_29FDHYaDNb9zIpkiRyxtZmdEEq592QVweSvCkIVyyBAGLfA09Z4XA.jpg" alt="OG_neshka Bot" />
-        </a>
-        <div class="tgme_page_title" aria-label="Page title">OG_neshka</div>
-        <div class="tgme_page_extra" aria-label="Username">@og_neshka</div>
-        <div class="tgme_page_description" aria-label="Description">
-          В наших венах кипит небо славян.
-        </div>
-        <div class="tgme_page_action">
-          <a href="tg://resolve?domain=og_neshka_bot" class="tgme_action_button_new" role="button" aria-label="Start chat with bot">
-            Send Message
-          </a>
-        </div>
-        <div class="tgme_page_additional">
-          Если у вас есть <strong>Telegram</strong>, вы можете сразу связаться с <br />
-          <strong>OG_neshka</strong>.
-        </div>
-      </div>
-    </div>
-  </div>
+
+<div class="container">
+  <img class="avatar" src="https://cdn4.telegram.space/file/Gt1gQAlKlFIgoJoJrjBy-f_8basdPaw9BSnfE3FBWctx5cFB9r-Dxkyduf5PNYLspTWiy6rm-o8uqZu15RLpzAtSY5ibPk2--M4XSgdCkIXHujpI08FdBr4a3dxHZ4wJwclkRdkb1FLxuBDsTII7D_pyQeBX4PloMZ5dAJqmP-zr0UTeqWIEPG0CaltCnPhgrWIbnQWPVsuKtF1LHZTT6OrypCZrCU2MwlGcjymR5ybLtrI2tA2I0YOM1tOz5IVpQW4vFuHSLuQxON7yscnsx6NPOUCWbZHn_29FDHYaDNb9zIpkiRyxtZmdEEq592QVweSvCkIVyyBAGLfA09Z4XA.jpg" alt="Avatar">
+  <h1>OG_neshka Bot</h1>
+  <div class="username">@og_neshka</div>
+  <div class="description">Connect with our Telegram bot to track mentions and more.</div>
+  <a href="https://t.me/og_neshka" target="_blank" class="btn" rel="noopener noreferrer">
+    Send Message
+    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+  </a>
+</div>
+
 </body>
 </html>
