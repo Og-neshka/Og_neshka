@@ -3,30 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OG_neshka — Telegram Bot</title>
+  <title>OG_neshka</title>
   <style>
-    /* Стили максимально повторяют оригинал Telegram страницы */
+    :root {
+      --tg-bg-color: #ffffff;
+      --tg-header-bg: #2aabee;
+      --tg-header-text: #ffffff;
+      --tg-text-color: #1c1c1c;
+      --tg-secondary-text: #8e8e93;
+      --tg-button-bg: #2aabee;
+      --tg-button-hover-bg: #2380b8;
+      --tg-button-text: #ffffff;
+    }
     body {
       margin: 0;
-      background: #fff;
-      font-family: Arial, sans-serif;
-      color: #000;
+      background: linear-gradient(135deg, #e6ecf0 0%, #f5f7fa 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--tg-text-color);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     .tgme_wrap {
       max-width: 420px;
-      margin: 0 auto;
-      border: 1px solid #ddd;
+      margin: 40px auto;
       border-radius: 12px;
+      background: var(--tg-bg-color);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       overflow: hidden;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      border: 1px solid #d1d1d6;
     }
     .tgme_header {
-      background: #2aabee;
-      color: #fff;
+      background: var(--tg-header-bg);
       padding: 15px;
-      font-weight: bold;
+      color: var(--tg-header-text);
+      font-weight: 700;
       font-size: 18px;
       text-align: center;
+      user-select: none;
     }
     .tgme_body_wrap {
       padding: 20px;
@@ -34,77 +47,87 @@
     }
     .tgme_page_photo {
       margin: 0 auto 20px;
-      width: 100px;
-      height: 100px;
+      width: 96px;
+      height: 96px;
       border-radius: 50%;
       overflow: hidden;
-      box-shadow: 0 0 10px rgba(42,186,238,0.5);
+      cursor: pointer;
+      border: 2px solid var(--tg-header-bg);
     }
     .tgme_page_photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
     .tgme_page_title {
       font-size: 24px;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
+      color: var(--tg-text-color);
     }
     .tgme_page_extra {
-      color: #666;
-      margin-bottom: 14px;
       font-size: 14px;
+      color: var(--tg-secondary-text);
+      margin-bottom: 15px;
     }
     .tgme_page_description {
       font-size: 16px;
-      color: #444;
-      margin-bottom: 24px;
+      color: var(--tg-text-color);
+      margin-bottom: 25px;
+      padding: 0 10px;
     }
     .tgme_page_action {
       margin-bottom: 15px;
     }
     .tgme_action_button_new {
-      display: inline-block;
-      background-color: #2aabee;
-      color: #fff;
-      padding: 12px 30px;
-      border-radius: 25px;
+      background-color: var(--tg-button-bg);
+      color: var(--tg-button-text);
       font-weight: 600;
       font-size: 16px;
+      padding: 12px 30px;
+      border-radius: 25px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(42,186,238,0.6);
+      display: inline-block;
+      border: none;
+      cursor: pointer;
       transition: background-color 0.3s ease;
+      box-shadow: none; /* Убираем свечение */
     }
     .tgme_action_button_new:hover {
-      background-color: #2380b8;
+      background-color: var(--tg-button-hover-bg);
     }
     .tgme_page_additional {
       font-size: 13px;
-      color: #888;
+      color: var(--tg-secondary-text);
       margin-top: 10px;
+      line-height: 1.3;
     }
   </style>
 </head>
 <body>
-  <div class="tgme_wrap">
-    <div class="tgme_header">OG_neshka</div>
+  <div class="tgme_wrap" role="main">
+    <div class="tgme_header" aria-label="Header">
+      OG_neshka
+    </div>
     <div class="tgme_body_wrap">
       <div class="tgme_page">
-        <div class="tgme_page_photo">
-          <a href="tg://resolve?domain=og_neshka" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn4.telegram.space/file/Gt1gQAlKlFIgoJoJrjBy-f_8basdPaw9BSnfE3FBWctx5cFB9r-Dxkyduf5PNYLspTWiy6rm-o8uqZu15RLpzAtSY5ibPk2--M4XSgdCkIXHujpI08FdBr4a3dxHZ4wJwclkRdkb1FLxuBDsTII7D_pyQeBX4PloMZ5dAJqmP-zr0UTeqWIEPG0CaltCnPhgrWIbnQWPVsuKtF1LHZTT6OrypCZrCU2MwlGcjymR5ybLtrI2tA2I0YOM1tOz5IVpQW4vFuHSLuQxON7yscnsx6NPOUCWbZHn_29FDHYaDNb9zIpkiRyxtZmdEEq592QVweSvCkIVyyBAGLfA09Z4XA.jpg" alt="OG_neshka Avatar" />
-          </a>
+        <a href="tg://resolve?domain=og_neshka_bot" class="tgme_page_photo" aria-label="Bot avatar link">
+          <img src="https://cdn4.telegram.space/file/Gt1gQAlKlFIgoJoJrjBy-f_8basdPaw9BSnfE3FBWctx5cFB9r-Dxkyduf5PNYLspTWiy6rm-o8uqZu15RLpzAtSY5ibPk2--M4XSgdCkIXHujpI08FdBr4a3dxHZ4wJwclkRdkb1FLxuBDsTII7D_pyQeBX4PloMZ5dAJqmP-zr0UTeqWIEPG0CaltCnPhgrWIbnQWPVsuKtF1LHZTT6OrypCZrCU2MwlGcjymR5ybLtrI2tA2I0YOM1tOz5IVpQW4vFuHSLuQxON7yscnsx6NPOUCWbZHn_29FDHYaDNb9zIpkiRyxtZmdEEq592QVweSvCkIVyyBAGLfA09Z4XA.jpg" alt="OG_neshka Bot" />
+        </a>
+        <div class="tgme_page_title" aria-label="Page title">OG_neshka Bot</div>
+        <div class="tgme_page_extra" aria-label="Username">@og_neshka_bot</div>
+        <div class="tgme_page_description" aria-label="Description">
+          В наших венах кипит небо славян.
         </div>
-        <div class="tgme_page_title">OG_neshka</div>
-        <div class="tgme_page_extra">@og_neshka</div>
-        <div class="tgme_page_description">В наших венах кипит небо славян.</div>
         <div class="tgme_page_action">
-          <a class="tgme_action_button_new" href="tg://resolve?domain=og_neshka" target="_blank" rel="noopener noreferrer">
+          <a href="tg://resolve?domain=og_neshka_bot" class="tgme_action_button_new" role="button" aria-label="Start chat with bot">
             Send Message
           </a>
         </div>
         <div class="tgme_page_additional">
-          If you have <strong>Telegram</strong>, you can contact <br /><strong>OG_neshka</strong> right away.
+          Если у вас есть <strong>Telegram</strong>, вы можете сразу связаться с <br />
+          <strong>OG_neshka Bot</strong>.
         </div>
       </div>
     </div>
