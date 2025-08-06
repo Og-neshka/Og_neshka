@@ -3,86 +3,104 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Telegram Bot — og_neshka</title>
+<title>Telegram Bot OG_neshka</title>
 <style>
-  body {
-    margin: 0;
-    background-color: #f9fafd;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  /* Фон и базовые настройки */
+  html, body {
+    margin: 0; padding: 0;
+    height: 100%;
+    background: #e5e5e5;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     color: #222;
   }
-  .container {
-    background: white;
+  /* Центрирование контейнера */
+  .tgme_page_wrap {
+    background: #fff;
     width: 360px;
+    margin: 40px auto;
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    text-align: center;
-    padding: 30px 20px 40px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    overflow: hidden;
   }
-  .avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 2px solid #00aaff;
-  }
-  h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-  .username {
-    color: #00aaff;
-    margin: 6px 0 20px;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-  .description {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 30px;
-  }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    background-color: #00aaff;
+  /* Верхняя панель */
+  .tgme_header {
+    background: #0088cc;
     color: white;
-    border: none;
-    border-radius: 24px;
-    padding: 12px 32px;
-    font-size: 1.1rem;
+    padding: 12px 16px;
+    font-size: 18px;
     font-weight: 600;
-    cursor: pointer;
+    text-align: center;
+    position: relative;
+  }
+  /* Аватар */
+  .tgme_page_photo {
+    width: 128px;
+    height: 128px;
+    margin: 24px auto 12px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 0 3px #0088cc;
+  }
+  .tgme_page_photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Имя и ник */
+  .tgme_page_title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  .tgme_page_extra {
+    text-align: center;
+    font-size: 14px;
+    color: #0088cc;
+    margin-bottom: 16px;
+  }
+  /* Описание */
+  .tgme_page_description {
+    text-align: center;
+    padding: 0 20px 24px;
+    font-size: 14px;
+    color: #444;
+  }
+  /* Кнопка */
+  .tgme_action_button {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 0 auto 24px;
+    background: #0088cc;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 12px 0;
+    border-radius: 24px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
+    box-shadow: none; /* без свечения */
   }
-  .btn:hover {
-    background-color: #0088cc;
-  }
-  .btn svg {
-    margin-left: 12px;
-    width: 20px;
-    height: 20px;
-    fill: white;
+  .tgme_action_button:hover {
+    background: #0077bb;
   }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <img class="avatar" src="https://cdn4.telegram.space/file/Gt1gQAlKlFIgoJoJrjBy-f_8basdPaw9BSnfE3FBWctx5cFB9r-Dxkyduf5PNYLspTWiy6rm-o8uqZu15RLpzAtSY5ibPk2--M4XSgdCkIXHujpI08FdBr4a3dxHZ4wJwclkRdkb1FLxuBDsTII7D_pyQeBX4PloMZ5dAJqmP-zr0UTeqWIEPG0CaltCnPhgrWIbnQWPVsuKtF1LHZTT6OrypCZrCU2MwlGcjymR5ybLtrI2tA2I0YOM1tOz5IVpQW4vFuHSLuQxON7yscnsx6NPOUCWbZHn_29FDHYaDNb9zIpkiRyxtZmdEEq592QVweSvCkIVyyBAGLfA09Z4XA.jpg" alt="Avatar">
-  <h1>OG_neshka Bot</h1>
-  <div class="username">@og_neshka</div>
-  <div class="description">Connect with our Telegram bot to track mentions and more.</div>
-  <a href="https://t.me/og_neshka" target="_blank" class="btn" rel="noopener noreferrer">
+<div class="tgme_page_wrap" role="main" aria-label="Telegram bot page">
+  <header class="tgme_header">Telegram Bot</header>
+  <div class="tgme_page_photo">
+    <img src="https://cdn4.telegram.space/file/Gt1gQAlKlFIgoJoJrjBy-f_8basdPaw9BSnfE3FBWctx5cFB9r-Dxkyduf5PNYLspTWiy6rm-o8uqZu15RLpzAtSY5ibPk2--M4XSgdCkIXHujpI08FdBr4a3dxHZ4wJwclkRdkb1FLxuBDsTII7D_pyQeBX4PloMZ5dAJqmP-zr0UTeqWIEPG0CaltCnPhgrWIbnQWPVsuKtF1LHZTT6OrypCZrCU2MwlGcjymR5ybLtrI2tA2I0YOM1tOz5IVpQW4vFuHSLuQxON7yscnsx6NPOUCWbZHn_29FDHYaDNb9zIpkiRyxtZmdEEq592QVweSvCkIVyyBAGLfA09Z4XA.jpg" alt="Avatar" />
+  </div>
+  <h1 class="tgme_page_title">OG_neshka Bot</h1>
+  <div class="tgme_page_extra">@og_neshka</div>
+  <div class="tgme_page_description">Connect with our Telegram bot to track mentions and more.</div>
+  <a href="https://t.me/og_neshka" target="_blank" rel="noopener" class="tgme_action_button" aria-label="Send message to OG_neshka bot">
     Send Message
-    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
   </a>
 </div>
 
